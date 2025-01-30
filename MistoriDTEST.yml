@@ -1,6 +1,6 @@
 ---
 - name: Test WinRM connection
-  hosts: windows
+  hosts: Win10Group
   tasks:
     - name: Ping Windows host
       ansible.windows.win_ping:
