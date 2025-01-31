@@ -1,6 +1,9 @@
 ---
 - name: Test WinRM connection
-  hosts: Win10Group
+  hosts: 192.168.0.194
+  gather_facts: no  # Отключаем сбор фактов, если он не нужен
   tasks:
-    - name: Ping Windows host
-      ansible.windows.win_ping:
+    - name: Создание папки test на рабочем столе
+      ansible.windows.win_file:
+        path: 'C:\Users\Виктория\Desktop\test'  # Путь к папке
+        state: directory  # Указываем, что это директория
